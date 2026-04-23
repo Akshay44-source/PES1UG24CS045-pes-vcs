@@ -5,7 +5,7 @@
 #include "commit.h"
 #include "object.h"
 #include "tree.h"
-
+#include "tree.h"
 int commit_create(const char *message, ObjectID *commit_id_out) {
 
     // STEP 1: Create tree from index

@@ -8,16 +8,18 @@
 #define OBJECTS_DIR ".pes/objects"
 
 // Object ID (like Git SHA)
+
 typedef struct {
-    unsigned char hash[HASH_SIZE];
+    unsigned char hash[32];
 } ObjectID;
 
-// Object types
 typedef enum {
     OBJ_BLOB,
     OBJ_TREE,
     OBJ_COMMIT
 } ObjectType;
+
+int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out);
 
 // Function declarations
 void hash_to_hex(const ObjectID *id, char *hex_out);
